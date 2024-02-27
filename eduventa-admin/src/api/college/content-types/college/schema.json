@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "colleges",
+  "info": {
+    "singularName": "college",
+    "pluralName": "colleges",
+    "displayName": "College",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "college_name": {
+      "type": "text"
+    },
+    "college_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "college_link": {
+      "type": "string"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "colleges"
+    },
+    "top_colleges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::top-college.top-college",
+      "mappedBy": "college"
+    }
+  }
+}
