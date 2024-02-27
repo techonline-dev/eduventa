@@ -1,0 +1,56 @@
+<!--Inner Banner-->
+<div class="aboutbanner innerbanner">
+    <div class="inner-breadcrumb">
+          <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-md-12 col-12 ">
+                   <h2 class="breadcrumb-title">College Predictor</h2>
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">College Predictor</li>
+                        </ol>
+                    </nav>							
+                </div>
+            </div>
+          </div>		            
+    </div>		            
+</div>	
+<!--/Inner Banner-->		
+<!-- Vaciencies Section -->
+<section class="vaciencies-section vaciencies-eight ">
+    <div class="container">
+        <div class="vacancies-details">
+            <div class="row">
+                
+                <div *ngFor="let predictor of collegPpredictors.data" class="col-lg-4 col-md-6 col-sm-6 aos">
+                    <div class="vacancies-box">
+                      <div class="vacancies-inner">
+                        <div class="vaca-img">
+                          <img [src]="SITE_URL + predictor.attributes.event_logo.data.attributes.url" class="img-fluid" alt="arrow">
+                        </div>
+                        <div class="vacancies-content">
+                          <h4><a href="">{{ predictor.attributes.event_name }}</a></h4>
+                          <div class="vaca-location">
+                            <p>{{ predictor.attributes.colleges_participating }}</p>
+                            <p class="light-color">|</p>
+                            <p><i class="fas fa-light fa-location-dot"></i> Exam Level <span style="color: green;">{{ predictor.attributes.exam_level }}</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vaca-details">
+                        <p>{{ predictor.attributes.event_description }}.</p>
+                      </div>
+                      <div class="vaca-footer">
+                        <div class="footer-btn">
+                          <a href="" class="btn-view">Predict Now</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Vaciencies Section -->

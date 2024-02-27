@@ -1,0 +1,87 @@
+<!-- Footer -->
+<footer class="footer footer-seven">
+
+<!-- Become Agent -->
+<section class="join-us-dealer common-padding">
+    <div class="container">
+        <div class="row align-items-center aos" >
+            <div class="col-lg-6 col-md-12">
+                <div class="joinus-dealer-content">
+                    <h3 class="aos"  data-aos-delay="200">{{headline }}</h3>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="join-as-dealer-btn">
+                    <a [href]="'tel: +91 ' + MobileNumner">+91 {{ MobileNumner }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer Top -->
+    <div class="footer-top aos" >
+        <div class="container">
+            <!-- Assuming this is the part of your HTML template -->
+<div class="row">
+    <div *ngFor="let item of footers?.data?.attributes?.items?.data" class="col-lg-2 col-md-6">
+      <div class="footer-widget footer-menu">
+        <h2 class="footer-title">{{ item?.attributes?.title }}</h2>
+        <ul *ngIf="item?.attributes?.children?.data && item.attributes.children.data.length > 0">
+          <li *ngFor="let child of item.attributes.children.data">
+            <a [routerLink]="child?.attributes?.url">{{ child?.attributes?.title }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+       
+
+            <!-- Footer Counter Section-->
+            <div class="footercount">
+                <div class="row d-flex align-items-center">
+                    <div class="col-lg-4 col-md-6">
+                        <!-- <div class="vistors-details">
+                            <img src="assets/img/logo-new.png" alt="img">
+                        </div> -->
+                    </div>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="vistors-details text-lg-center">
+                            <div class="social-icon">
+                                <ul>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-youtube"></i> </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 ">
+                        <div class="vistors-details text-lg-end">
+                            <p>© 2024 Eduventa Pvt. Ltd. All Rights Reserved
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Footer  Counter Section-->
+
+        </div>
+    </div>
+    <!-- /Footer Top -->
+
+</footer>
+<!-- /Footer -->
