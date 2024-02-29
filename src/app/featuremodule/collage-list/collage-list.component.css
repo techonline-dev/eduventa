@@ -1,0 +1,11 @@
+
+
+@media (max-width: 767.98px) {
+
+    .blog-location-details {
+        display: block  !important;
+      }
+      .blog-listview .card-body {
+        padding: 0px;
+    }
+    }

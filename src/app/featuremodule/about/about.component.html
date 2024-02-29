@@ -1,0 +1,59 @@
+<!--Inner Banner-->
+<div class="aboutbanner innerbanner">
+    <div class="inner-breadcrumb">
+          <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-md-12 col-12 ">
+                   <h2 class="breadcrumb-title">About Us</h2>
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a [routerLink]="">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">About us</li>
+                        </ol>
+                    </nav>							
+                </div>
+            </div>
+          </div>		            
+    </div>		            
+</div>	
+<!--/Inner Banner-->		
+
+<!--About Content-->
+<section class="about-content">
+    <div class="container">
+        <div class="about-listee">
+            <div class="about-img">
+                <img src="{{SITE_URL+aboutUs.data[0].attributes.AboutImage.data.attributes.formats.thumbnail.url}}" class="img-fluid" alt="">
+            </div>	
+            <div class="about-info">
+                <h4>{{aboutUs.data[0].attributes.Heading}}</h4>
+                <p>{{aboutUs.data[0].attributes.AboutEduventa}}</p>
+            </div>
+        </div>		
+    </div>		
+</section>
+<!--/About Content-->
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="row align-items-center">
+             <div class="col-lg-7">
+                  <div class="cta-content">
+                    <h3>{{aboutUs.data[0].attributes.missionVissionTitle}}</h3>
+                    <p>{{aboutUs.data[0].attributes.missionVission}}</p>
+                      <div class="cta-btn">
+                         <a [routerLink]="" class="btn-primary postad-btn">Post Your Ads</a>
+                         <a [routerLink]="" class="browse-btn">Browse Ads</a>							  
+                      </div>
+                  </div>
+             </div>
+             <div class="col-lg-5">
+                   <div class="cta-img">
+                    <img src="{{SITE_URL+aboutUs.data[0].attributes.MissionVision.data[0].attributes.formats.thumbnail.url}}" class="img-fluid" alt="CTA">
+                   </div>
+             </div>
+        </div>
+    </div>
+</section>		
+<!-- /CTA Section -->
+

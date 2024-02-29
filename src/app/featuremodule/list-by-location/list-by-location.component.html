@@ -1,0 +1,55 @@
+<!--Inner Banner-->
+<div class="aboutbanner innerbanner">
+    <div class="inner-breadcrumb">
+          <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-md-12 col-12 ">
+                   <h2 class="breadcrumb-title">List By Location</h2>
+                    <nav aria-label="breadcrumb" class="page-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">List By Location</li>
+                        </ol>
+                    </nav>							
+                </div>
+            </div>
+          </div>		            
+    </div>		            
+</div>	
+<!--/Inner Banner-->		
+
+   <!-- Space Section -->
+   <section class="space-section">
+    <div class="container">
+        <div *ngFor="let city of collageByfilter?.data" class="space-sec">
+            <div class="row">
+              <div class="col-md-8">
+                <div class="section-heading heading-four aos">
+                  <h2>{{ city.attributes.city.data.attributes.city_name }}</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div *ngFor="let college of city?.attributes?.top_colleges.data" class="col-lg-3 col-md-6 aos">
+                <div class="space-wrap">
+                  <div class="space-img">
+                    <a href="{{ college.attributes.college_link }}">
+                        <img src="{{SITE_URL + college.attributes.college_img?.data?.attributes?.url }}" class="img-fluid" alt="college-img">
+                    </a>
+                  </div>
+                  <div class="space-content">
+                    <h5><a href="{{ college.attributes.college_link }}">{{ college.attributes.college_name }}</a></h5>
+                    <p>{{ college.attributes.college_location }}</p>
+                    <!-- <p>{{ college.attributes.college_rank }}</p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                     
+    </div>		
+</section>		
+<!-- /Space Section -->
+
+
+
