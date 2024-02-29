@@ -9,6 +9,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { CollegePredictorModule } from './featuremodule/college-predictor/college-predictor.module';
 import { CollageListModule } from './featuremodule/collage-list/collage-list.module';
+import { ListByLocationModule } from './featuremodule/list-by-location/list-by-location.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CollageListModule } from './featuremodule/collage-list/collage-list.mod
     MatTabsModule,
     BrowserAnimationsModule,
     CollegePredictorModule,
+    ListByLocationModule,
     CollageListModule,
     HttpClientModule,
     BsDatepickerModule.forRoot()

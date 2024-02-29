@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Lightbox } from 'ngx-lightbox';
 import { DataService } from '../../service/data.service';
@@ -8,6 +8,8 @@ import { ViewportScroller } from '@angular/common';
 import { PopupComponent } from '../popup/popup.component';
 import { DownloadPopupComponent } from '../download-popup/download-popup.component';
 import { MatDialog } from '@angular/material/dialog';
+import { dataServices } from '../../service/dataServices.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-collage-details',
@@ -20,8 +22,21 @@ export class CollageDetailsComponent {
   public albumsTwo:any =[];
   activeTab: string[] = ['hotels']; // Initialize with default active tab
   public latestBlog: any = [];
+  SITE_URL = 'http://localhost:1337'
+  collageDetails: any;
+  highlightsPont:any;
 
-  constructor(private DataService: DataService,private _lightbox: Lightbox,public router:Router,private viewportScroller: ViewportScroller,public dialog: MatDialog) {
+  constructor(private DataService: DataService,
+    private _lightbox: Lightbox,
+    public router:Router,
+    private viewportScroller: ViewportScroller,
+    private dataServices: dataServices,
+    private dialog: MatDialog,
+    private sanitizer: DomSanitizer,
+    private cdr: ChangeDetectorRef
+
+    
+    ) {
     for (let i = 5; i <= 12; i++) {
       const src = 'assets/img/gallery/gallery1/gallery-' + i + '.jpg';
       const caption = 'Image ' + i + ' caption here';
@@ -74,16 +89,33 @@ export class CollageDetailsComponent {
       },
     },
   };
-  ngOnInit(): void {}
-  // direction(){
-  //   this.router.navigate([routes.servicedetails])
-  // }
-  scrollToTab(tabId: string): void {
-    const element = document.getElementById(tabId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
+  ngOnInit(): void {
+    this.dataServices.collageList().subscribe(
+      data => {
+        // this.collageDetails =data;
+        console.log(data)
+    
+        this.cdr.detectChanges(); 
+      },
+      error => {
+        console.error(error);
+      }
+    );
+
+    this.dataServices.collageDetails().subscribe(
+      data => {
+        this.collageDetails =data;
+        console.log(data)
+    
+        this.cdr.detectChanges(); 
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }  
+
+
   openDialog() {
     const dialogRef = this.dialog.open(PopupComponent);
 
@@ -93,9 +125,9 @@ export class CollageDetailsComponent {
   }
  downloadOpenDialog() {
     const dialogRef = this.dialog.open(DownloadPopupComponent);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
   }
 }
+

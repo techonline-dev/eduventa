@@ -81,3 +81,20 @@ margin-bottom: 12px; }
 {
 margin-top: 4%;
 }
+.displayTab
+{
+    display: flex;
+}
+
+@media (max-width: 767.98px) {
+
+    .displayTab
+    {
+        display: block;
+    }
+    }
+
+    ng::deep.ck-table-resized
+    {
+        width: 100% !important;
+    }

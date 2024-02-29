@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import { routes } from 'src/app/core/helpers/routes/routes';
-import { DataService } from 'src/app/service/data.service';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { dataServices } from '../../service/dataServices.service';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-location',
@@ -9,64 +10,26 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./list-by-location.component.css']
 })
 export class ListByLocation {
-  public routes=routes;
-  public testimonial:any=[];
-  public universitiesCompanies:any=[]
-  public accountcreation:any=[]
-  constructor(private DataService:DataService){
-    this.testimonial=this.DataService.testimonialList,
-    this.universitiesCompanies=this.DataService.universitiesCompanies
-    this.accountcreation=this.DataService.accountcreation
-   
+  SITE_URL = 'http://localhost:1337'
+  collageByfilter: any;
+  constructor(
+    private dataServices: dataServices,
+    private dialog: MatDialog,
+    private sanitizer: DomSanitizer,
+    private cdr: ChangeDetectorRef
+  ) { }
 
-  }
-  public testimonialOwlOptions:OwlOptions={
-    loop:true,
-    margin:24,
-    nav:true,
-    dots: false,
-    smartSpeed: 2000,
-    navText : ["<i class='fa-solid fa-angle-left'></i>","<i class='fa-solid fa-angle-right'></i>"],
-    
-    responsive:{
-      0:{
-        items:1
+  ngOnInit(): void {
+    this.dataServices.collageByLocation().subscribe(
+      data => {
+        this.collageByfilter =data;
+        console.log(data)
+        this.cdr.detectChanges(); 
       },
-      
-      550:{
-        items:1
-      },
-      700:{
-        items:2
-      },
-      1000:{
-        items:2
+      error => {
+        console.error(error);
       }
-    }
+    );
   }
-  public universitiesCompaniesOwlOptions: OwlOptions = {
-    loop:true,
-    margin:24,
-    nav:false,
-    autoplay:true,
-    smartSpeed: 2000,
-    
-    navText : ["<i class='fa-solid fa-angle-left'></i>","<i class='fa-solid fa-angle-right'></i>"],
-    responsive:{
-      0:{
-        items:1
-      },
-      
-      550:{
-        items:2
-      },
-      700:{
-        items:4
-      },
-      1000:{
-        items:6
-      }
-    }
-  };
 
 }

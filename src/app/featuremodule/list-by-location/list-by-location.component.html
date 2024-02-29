@@ -21,172 +21,35 @@
    <!-- Space Section -->
    <section class="space-section">
     <div class="container">
-        <div class="space-sec">
+        <div *ngFor="let city of collageByfilter?.data" class="space-sec">
             <div class="row">
-                <div class="col-md-8">
-                    <div class="section-heading heading-four aos">
-                        <h2>Banglore</h2>
-                    </div>	
+              <div class="col-md-8">
+                <div class="section-heading heading-four aos">
+                  <h2>{{ city.attributes.city.data.attributes.city_name }}</h2>
                 </div>
-                <div class="col-md-4 text-md-end aos" >
-                    <div class="interset-btn">	
-                        <a href="#" class="btn btn-primary more-btn">View More <i class="feather-arrow-right"></i></a>
-                    </div>
-                </div>
+              </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-01.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                         
-                        </div>
-                        <div class="space-content">
-                        
-                            <h5><a href="#">Y&M Hamburger Co.</a></h5>
-                          
-                        </div> 
-                    </div> 
-                </div>	
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-02.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                          
-                        </div>
-                        <div class="space-content">
-                           
-                            <h5><a href="#">Mech Work Co.</a></h5>
-                          
-                           
-                        </div> 
-                    </div> 
+              <div *ngFor="let college of city?.attributes?.top_colleges.data" class="col-lg-3 col-md-6 aos">
+                <div class="space-wrap">
+                  <div class="space-img">
+                    <a href="{{ college.attributes.college_link }}">
+                        <img src="{{SITE_URL + college.attributes.college_img?.data?.attributes?.url }}" class="img-fluid" alt="college-img">
+                    </a>
+                  </div>
+                  <div class="space-content">
+                    <h5><a href="{{ college.attributes.college_link }}">{{ college.attributes.college_name }}</a></h5>
+                    <p>{{ college.attributes.college_location }}</p>
+                    <!-- <p>{{ college.attributes.college_rank }}</p> -->
+                  </div>
                 </div>
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-03.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                         
-                        </div>
-                        <div class="space-content">
-                         
-                            <h5><a href="#">Biconnect Shift</a></h5>
-                           
-                           
-                        </div> 
-                    </div> 
-                </div>
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-04.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                        
-                        </div>
-                        <div class="space-content">
-                         
-                            <h5><a href="#">Worksion space</a></h5>
-                         
-                          
-                        </div> 
-                    </div> 
-                </div>   
-            </div>			   
-        </div>			   
+              </div>
+            </div>
+          </div>
+                     
     </div>		
 </section>		
 <!-- /Space Section -->
 
-   <!-- Space Section -->
-   <section class="space-section">
-    <div class="container">
-        <div class="space-sec">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="section-heading heading-four aos">
-                        <h2>Patna</h2>
-                    </div>	
-                </div>
-                <div class="col-md-4 text-md-end aos" >
-                    <div class="interset-btn">	
-                        <a href="#" class="btn btn-primary more-btn">View More <i class="feather-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-01.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                         
-                        </div>
-                        <div class="space-content">
-                        
-                            <h5><a href="#">Y&M Hamburger Co.</a></h5>
-                          
-                        </div> 
-                    </div> 
-                </div>	
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-02.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                          
-                        </div>
-                        <div class="space-content">
-                           
-                            <h5><a href="#">Mech Work Co.</a></h5>
-                          
-                           
-                        </div> 
-                    </div> 
-                </div>
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-03.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                         
-                        </div>
-                        <div class="space-content">
-                         
-                            <h5><a href="#">Biconnect Shift</a></h5>
-                           
-                           
-                        </div> 
-                    </div> 
-                </div>
-                <div class="col-lg-3 col-md-6 aos" >
-                    <div class="space-wrap">
-                        <div class="space-img">
-                            <a href="#">
-                                <img src="assets/img/work/work-04.jpg" class="img-fluid" alt="blog-img">
-                            </a>
-                        
-                        </div>
-                        <div class="space-content">
-                         
-                            <h5><a href="#">Worksion space</a></h5>
-                         
-                          
-                        </div> 
-                    </div> 
-                </div>   
-            </div>			   
-        </div>			   
-    </div>		
-</section>		
-<!-- /Space Section -->
+
 

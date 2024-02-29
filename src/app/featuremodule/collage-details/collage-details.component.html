@@ -1,8 +1,8 @@
+<div *ngFor="let item of collageDetails?.data">
 <div class="">
   <img src="assets/img/gallery/gallery1/gallery-6.jpg" class="collageBanner">
   <div class="overlay"></div>
 </div>
-
 <!--Details Description  Section-->
 <section class="details-description">
   <div class="container">
@@ -14,7 +14,7 @@
             alt="authorimg">
         </div>
         <div class="authordetails">
-          <h5>IIT Madras (IITM): Cutoff, Placements, Admission 2024, Courses, Fees, Rankings
+          <h5>{{item.attributes.college_name}}
           </h5>
           <p>IT Madras BTech admissions 2024 are based on JEE Advanced score 2024 followed by JoSAA Counselling. JEE
             Advanced 2024 Exam dates are out. The exam will be conducted on May 26, 2024.</p>
@@ -27,11 +27,9 @@
       <div class="row">
         <div class="col-lg-7">
           <ul>
-            <li><a href="javascript:void(0);"><i class="feather-map"></i> Chennai, Tamil Nadu </a></li>
-            <li><a href="javascript:void(0);"><img src="assets/img/website.svg" alt="website">AICTE</a></li>
-            <li><a href="javascript:void(0);"><i class="feather-share-2"></i> Estd 1959</a></li>
-            <li><a href="javascript:void(0);"><i class="fa-regular fa-comment-dots"></i> Ranked 3 For Overall By The
-                Week 2021</a></li>
+            <li><a href="javascript:void(0);"><i class="feather-map"></i> {{item.attributes.location}}</a></li>
+            <li><a href="javascript:void(0);"><img src="assets/img/website.svg" alt="website">{{item.attributes.college_rank}}</a></li>
+            <li><a href="javascript:void(0);"><i class="feather-share-2"></i> {{item.attributes.approved_by}}</a></li>
           </ul>
         </div>
         <div class="col-lg-5">
@@ -64,137 +62,28 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-12">
-                <div style="display: flex;"> <a (click)="onClick('AnchorId')" class="scrollButton">Info Or Overview
+                <div class="displayTab"> <a (click)="onClick('AnchorId')" class="scrollButton">Info Or Overview
                   </a>
                   <a (click)="onClick('fees')" class="scrollButton">Courses And Fees</a>
                   <a (click)="onClick('admissions')" class="scrollButton">Admission</a>
                   <a (click)="onClick('Placement')" class="scrollButton">Placement</a>
                 </div>
 
-                <!-- <div class="row justify-content-center">
-            <div class="col-lg-12">
-              <div class="recommended-tabs-blk">
-                <ul class="nav tabs-style gap-3" data-bs-tabs="tabs">
-                  <li>
-                    <a
-                      [class.active]="activeTab[0] == 'hotels'"
-                      aria-current="true"
-                      data-bs-toggle="tab"
-                      href="#hotels"
-                      (click)="activeTab[0] = 'hotels'"
-                    >
-                      <span>
-                        <img
-                          src="assets/img/icons/trip-icon-01.svg"
-                          alt="Dreamstrip Recommended"
-                        />
-                      </span>
-                      Info or overview
-
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      [class.active]="activeTab[0] == 'restaurants'"
-                      (click)="activeTab[0] = 'restaurants'"
-                      data-bs-toggle="tab"
-                      href="#restaurants"
-                    >
-                      <span>
-                        <img
-                          src="assets/img/icons/trip-icon-02.svg"
-                          alt="Dreamstrip Recommended"
-                        />
-                      </span>
-                      Courses and fees
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      [class.active]="activeTab[0] == 'shops'"
-                      (click)="activeTab[0] = 'shops'"
-                      data-bs-toggle="tab"
-                      href="#shops"
-                    >
-                      <span>
-                        <img
-                          src="assets/img/icons/trip-icon-03.svg"
-                          alt="Dreamstrip Recommended"
-                        />
-                      </span>
-                      Admission
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      [class.active]="activeTab[0] == 'business'"
-                      (click)="activeTab[0] = 'business'"
-                      data-bs-toggle="tab"
-                      href="#business"
-                    >
-                      <span>
-                        <img
-                          src="assets/img/icons/trip-icon-04.svg"
-                          alt="Dreamstrip Recommended"
-                        />
-                      </span>
-                      Placement
-                    </a>
-                  </li>
-                
-                </ul>
-              </div>
-            </div>
-          </div> -->
+          
                 <div class="card-body tab-content">
                   <div id="AnchorId">
                     <div class="card-body marginTop">
-                      <h4>About IIT Madras</h4>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.</p>
+                      <h4>Overview</h4>
+                      <p>{{item.attributes.college_description}}</p>
                     </div>
                   </div>
 
                   <div>
                     <div class="card-body marginTop" id="fees">
-                      <h4>IIT Madras Fees & Eligibility
+                      <h4>Courses And Fees
                       </h4>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Course </th>
-                            <th>Fees</th>
-                            <th>Eligibility</th>
-                            <th>Application Date </th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Cell 1</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                            <td>Cell 4</td>
-                            <td>
-                              <div class="callnow" (click)="openDialog()"><a ><i class="feather-phone-call"></i> Apply Now</a></div>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Cell 1</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                            <td>Cell 4</td>
-                            <td>
-                              <div class="callnow" (click)="openDialog()"><a ><i class="feather-phone-call"></i> Apply Now</a></div>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div [innerHTML]="item.attributes.table"></div>
+
                     </div>
                   </div>
 
@@ -202,39 +91,15 @@
                     <div class="card-body marginTop" id="admissions">
                       <h4>Admissions
                       </h4>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.</p>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                      <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.</p>
+                      <p>{{item.attributes.about_admissions}}</p>
+
                     </div>
                   </div>
                   <div class="card-body marginTop" id="Placement">
                     <h4>Placement
                     </h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                      type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                      also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                      passages, and more recently with desktop publishing software like Aldus PageMaker including
-                      versions of Lorem Ipsum.</p>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                      type and scrambled it to make a type specimen book. It has survived not only five centuries, but
-                      also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                      passages, and more recently with desktop publishing software like Aldus PageMaker including
-                      versions of Lorem Ipsum.</p>
+                    <p>{{item.attributes.about_placement}}</p>
+
 
                   </div>
 
@@ -293,18 +158,20 @@
         <div class="stickybar">
           <div class="rightsidebar">
             <div class="card">
-              <h4><img src="assets/img/details-icon.svg" alt="details-icon"> IIT Madras Highlights
+              <h4><img src="assets/img/details-icon.svg" alt="details-icon"> Collage Highlights
               </h4>
               <ul>
-                <li>Established Year : <span>1959</span></li>
-                <li>Campus Area : <span>617 Acres
+                <!-- <p>{{item.attributes.about_placement}}</p> -->
+
+                <li>Established Year : <span>{{item.attributes.college_highlights.established_year}}</span></li>
+                <li>Campus Area : <span>{{item.attributes.college_highlights.campus_area}}
                   </span></li>
-                <li>Approved by :<span>AICTE </span></li>
-                <li>Institute Type: <span>Public
+                <li>Approved by :<span>{{item.attributes.college_highlights.approved_by}} </span></li>
+                <li>Institute Type: <span>{{item.attributes.college_highlights.institute_type}}
                   </span></li>
-                <li>Cutoff: <span>148 - 3150 rank
+                <li>Cutoff: <span>{{item.attributes.college_highlights.cutoff}}
                   </span></li>
-                <li>Accepted Entrance Exams : <span>JEE Main and JEE
+                <li>Accepted Entrance Exams : <span>{{item.attributes.college_highlights.accepted_entrance_exams}}
                   </span></li>
 
               </ul>
@@ -346,4 +213,4 @@
   </div>
 </div>
 
-<!-- /Details Main Section -->
+<!-- /Details Main Section --></div>

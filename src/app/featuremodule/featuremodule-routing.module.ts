@@ -44,7 +44,7 @@ const routes: Routes = [
           import('./blogs/blog.module').then((m) => m.BlogGridSidebarModule),
       },
       {
-        path: 'blog-details',
+        path: 'blog-details/:id',
         loadChildren: () =>
           import('./blog-details/blog-details.module').then((m) => m.BlogDetailsModule),
       },
