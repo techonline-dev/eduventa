@@ -987,8 +987,8 @@ table.dataTable thead .sorting_desc_disabled:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  justify-content: end;
-  -webkit-justify-content: end;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -8197,7 +8197,7 @@ textarea.form-control {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .lang-select {
   position: relative;
@@ -8410,7 +8410,7 @@ textarea.form-control {
 }
 .search-group > ul {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .datepicker-col > ul {
   justify-content: flex-start;
@@ -9923,8 +9923,8 @@ textarea.form-control {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  justify-content: end;
-  -webkit-justify-content: end;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
 }
 .interset-btn .mynav3 {
@@ -11857,7 +11857,7 @@ section.home-six-trending-search {
 }
 .join-as-dealer-btn {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .join-as-dealer-btn a {
   background: #ffffff;
@@ -12214,7 +12214,7 @@ button.btn.car-search-icon:hover {
   font-weight: 400;
 }
 .header-nine .header-top .selection-list {
-  justify-content: end;
+  justify-content: flex-end;
 }
 .header-nine .header-top ul li {
   display: inline-block;
@@ -13083,7 +13083,7 @@ button.btn.car-search-icon:hover {
 }
 .verified-owner-slider .owl-nav {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   padding-top: 40px;
   gap: 10px;
@@ -16062,8 +16062,8 @@ section.advertisement {
   margin-bottom: 10px;
 }
 .footercount > .vistors-details ul {
-  justify-content: end;
-  -webkit-justify-content: end;
+  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
 }
 .vistors-details ul li {
   margin: 0 8px 0 0;
