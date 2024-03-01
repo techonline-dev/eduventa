@@ -1711,7 +1711,7 @@ table.dataTable thead .sorting_desc_disabled:after {
   margin-right: 0;
 }
 .header-top .selection-list {
-  justify-content: start;
+  justify-content: flex-start;
 }
 .header-top .header-nav {
   height: 68px;
@@ -8413,7 +8413,7 @@ textarea.form-control {
   justify-content: end;
 }
 .datepicker-col > ul {
-  justify-content: start;
+  justify-content: flex-start;
 }
 .banner-btm .icon-blk {
   width: 48px;
@@ -12709,7 +12709,7 @@ button.btn.car-search-icon:hover {
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .holiday-cabin-info .room-categories span {
   background: #fff;
@@ -13209,7 +13209,7 @@ button.btn.car-search-icon:hover {
   background: #F9FAFC;
 }
 .property-articles .section-heading-nine.section-heading h2 {
-  justify-content: start;
+  justify-content: flex-start;
 }
 .property-articles .grid-blog .blog-title {
   text-overflow: ellipsis;
@@ -15800,7 +15800,7 @@ section.advertisement {
 .ads-content {
   display: flex;
   align-items: start;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
 }
 .footer-eight .footercount {
@@ -16349,7 +16349,7 @@ section.advertisement {
   flex-direction: row;
   color: #000000;
   gap: 14px;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .middle-foo-widget .drop-blk .navbar-nav li {
   min-width: 100px;
@@ -17406,7 +17406,7 @@ section.advertisement {
     margin-bottom: 10px;
   }
   .job-role {
-    justify-content: start;
+    justify-content: flex-start;
   }
   .job-img img {
     max-width: 100%;
@@ -18664,7 +18664,7 @@ section.advertisement {
   }
   .section-heading.heading-five h2 {
     font-size: 24px;
-    justify-content: start;
+    justify-content: flex-start;
   }
   .grid-view .card .amount-details .validrate {
     font-size: 19px;
@@ -18932,7 +18932,7 @@ section.advertisement {
       margin-bottom: 10px;
   }
   .job-role {
-      justify-content: start;
+      justify-content: flex-start;
   }
   .adv-box {
       display: block;
@@ -19350,7 +19350,7 @@ section.advertisement {
     margin-bottom: 15px;
   }
   .selection-list {
-    justify-content: start;
+    justify-content: flex-start;
   }
   .footer-social h6,
   .header-top .selection-list {
@@ -19410,8 +19410,8 @@ section.advertisement {
     padding: 9px 34px;
   }
   .vistors-details ul {
-    justify-content: start;
-    -webkit-justify-content: start;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
   }
   .banner-btm .search-group ul li {
     width: 100%;
@@ -19591,8 +19591,8 @@ section.advertisement {
     padding: 70px 0 0;
   }
   .interset-btn {
-    justify-content: start;
-    -webkit-justify-content: start;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
   }
   .listee-content h3,

@@ -1690,7 +1690,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 	margin-right: 0;
 }
 .header-top .selection-list {
-	justify-content: start;
+	justify-content: flex-start;
 }
 .header-top .header-nav {
 	height: 68px;
@@ -8089,7 +8089,7 @@ textarea.form-control {
 	justify-content: flex-end;
 }
 .datepicker-col > ul {
-	justify-content: start;
+	justify-content: flex-start;
 }
 .banner-btm .icon-blk {
 	width: 48px;
@@ -10875,7 +10875,7 @@ textarea.form-control {
 	flex-direction: row;
 	color: #000000;
 	gap: 14px;
-	justify-content: start;
+	justify-content: flex-start;
 }
 .middle-foo-widget .drop-blk .navbar-nav li {
 	min-width: 100px;
@@ -12909,7 +12909,7 @@ textarea.form-control {
 		margin-bottom: 15px;
 	}
 	.selection-list {
-		justify-content: start;
+		justify-content: flex-start;
 	}
 	.footer-social h6, .header-top .selection-list {
 		margin-bottom: 15px;
@@ -12966,8 +12966,8 @@ textarea.form-control {
 		padding: 9px 34px;
 	}
 	.vistors-details ul {
-		justify-content: start;
-		-webkit-justify-content: start;
+		justify-content: flex-start;
+		-webkit-justify-content: flex-start;
 	}
 	.banner-btm .search-group ul li {
 		width: 100%;
@@ -13139,8 +13139,8 @@ textarea.form-control {
 		padding: 70px 0 0;
 	}
 	.interset-btn {
-		justify-content: start;
-		-webkit-justify-content: start;
+		justify-content: flex-start;
+		-webkit-justify-content: flex-start;
 		-ms-flex-pack: start;
 	}
 	.listee-content h3, .price-four .price-head h4 {
