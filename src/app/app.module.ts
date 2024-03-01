@@ -24,7 +24,7 @@ import { ListByLocationModule } from './featuremodule/list-by-location/list-by-l
     RouterModule,
     MatTabsModule,
     BrowserAnimationsModule,
-    CollegePredictorModule,
+    // CollegePredictorModule,
     ListByLocationModule,
     CollageListModule,
     HttpClientModule,

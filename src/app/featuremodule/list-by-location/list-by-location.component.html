@@ -38,7 +38,10 @@
                     </a>
                   </div>
                   <div class="space-content">
-                    <h5><a href="{{ college.attributes.college_link }}">{{ college.attributes.college_name }}</a></h5>
+                    <h5> <a [routerLink]="['/collage-details', college.attributes.slug]">
+                      {{ college.attributes.college_name }}
+                  </a></h5>
+                    <!-- <h5><a href="{{ college.attributes.college_link }}">{{ college.attributes.college_name }}</a></h5> -->
                     <p>{{ college.attributes.college_location }}</p>
                     <!-- <p>{{ college.attributes.college_rank }}</p> -->
                   </div>

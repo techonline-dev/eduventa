@@ -5,16 +5,22 @@ import { MatDialog } from '@angular/material/dialog';
 import { dataServices } from '../../service/dataServices.service';
 import { DownloadPopupComponent } from '../download-popup/download-popup.component';
 import { PopupComponent } from '../popup/popup.component';
+import { Router, ActivatedRoute } from '@angular/router';
 
 interface College {
-  location: string;
-  courseFee: number;
-  collegeName: string;
-  approvedBy: string;
-  logoUrl: string;
-  Ranking:string
-  
+  id: number;
+  attributes: {
+    location: string;
+    courseFee: number;
+    collegeName: string;
+    approvedBy: string;
+    logoUrl: string;
+    Ranking: string;
+    CollageTag: string;
+    CollageType: string;
+  };
 }
+
 
 @Component({
   selector: 'app-collage-list',
@@ -25,39 +31,45 @@ export class CollageListComponent implements OnInit {
   SITE_URL = 'http://localhost:1337'
 
   formattedData: College[] = [];
+  // collageList: College[] = [];
+  collageList: any;
   constructor(
     private dataServices: dataServices,
     private dialog: MatDialog,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
+  
   ngOnInit(): void {
-    this.dataServices.collageList().subscribe(
-      data => {
-        this.formatCollageData(data);
-        this.cdr.detectChanges(); 
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
-
-  formatCollageData(data: any): void {
-    this.formattedData = data.data.map((college: any) => {
-      return {
-        location: college.attributes.location,
-        courseFee: college.attributes.course_fee,
-        collegeName: college.attributes.college_name,
-        approvedBy: college.attributes.approved_by,
-        logoUrl: college.attributes.college_logo.data.attributes.url,
-        Ranking:college.attributes.Ranking,
-      };
+    this.route.data.subscribe(data => {
+      const courseType = data['courseType']; 
+      this.dataServices.collageList().subscribe(
+        response => {
+          if (response && 'data' in response && Array.isArray(response.data)) {
+            this.collageList = response.data.filter((college: College) => {
+              const meetsCriteria =
+                college.attributes.CollageType === courseType && college.attributes.CollageTag === 'Top ranked colleges';
+  
+              return meetsCriteria;
+            });
+            this.cdr.detectChanges();
+          } else {
+            console.error("Invalid API response format");
+          }
+        },
+        error => {
+          console.error(error);
+        }
+      );
     });
-
-    console.log('Formatted Data:', this.formattedData);
   }
-
+  
+  navigateToDetailsPage(college: any): void {
+    const collageSlug = college.attributes.slug;
+    this.router.navigate(['/collage-details', collageSlug]);
+  }
   downloadOpenDialog() {
     const dialogRef = this.dialog.open(DownloadPopupComponent);
 

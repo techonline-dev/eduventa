@@ -10,7 +10,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home-one',
+        redirectTo: 'home-eight',
       },
       {
         path: 'home-eight',

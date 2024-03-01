@@ -2,6 +2,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { dataServices } from '../../service/dataServices.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class CollagePredicator implements OnInit {
   constructor(
     private dataServices: dataServices,
     private dialog: MatDialog,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+
   ) { }
 
   ngOnInit(): void {
@@ -31,5 +34,9 @@ export class CollagePredicator implements OnInit {
       }
     );
   }
+  navigateToDetailsPage(predictor: any): void {
+    const collageSlug = predictor.attributes.slug;
+    this.router.navigate(['/college-predictor-details', collageSlug]);
+}
 
 }

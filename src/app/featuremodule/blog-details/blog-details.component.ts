@@ -26,39 +26,41 @@ export class BlogDetailsComponent implements OnInit {
     private router: Router, 
   ) { }
 
-  // ngOnInit(): void {
-  //   this.dataServices.blogDetails().subscribe(
+  ngOnInit(): void {
+    this.dataServices.blogDetails().subscribe(
       
-  //     data => {
-  //       this.blogDetails =data;
-  //       console.log(data)
-  //       this.cdr.detectChanges(); 
-  //     },
-  //     error => {
-  //       console.error(error);
-  //     }
-  //   );
+      data => {
+        this.blogDetails =data;
+        console.log(data)
+        this.cdr.detectChanges(); 
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+  // ngOnInit(): void {
+  //   console.log('ngOnInit called');
+    
+  //   this.route.paramMap.subscribe(params => {
+  //     const blogId = params.get('id') || '';
+  //     console.log('Extracted blogId:', blogId);
+  
+  //     const blogDetails$ = this.dataServices.blogDetailsWithId(blogId);
+  //     console.log('blogDetails$ observable:', blogDetails$);
+  
+  //     blogDetails$.subscribe(
+  //       data => {
+  //         this.blogDetails = data;
+  //         console.log('Blog Details:', data);
+  //         this.cdr.detectChanges();
+  //       },
+  //       error => {
+  //         console.error('Error fetching blog details:', error);
+  //       }
+  //     );
+  //   });
   // }
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const blogId = params.get('id') || '';
-      console.log('Extracted blogId:', blogId);
-  
-      const blogDetails$ = this.dataServices.blogDetailsWithId(blogId);
-      console.log('blogDetails$ observable:', blogDetails$);
-  
-      blogDetails$.subscribe(
-        data => {
-          this.blogDetails = data;
-          console.log('Blog Details:', data);
-          this.cdr.detectChanges();
-        },
-        error => {
-          console.error('Error fetching blog details:', error);
-        }
-      );
-    });
-  }
   
 }

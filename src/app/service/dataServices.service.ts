@@ -24,6 +24,8 @@ export class dataServices {
   url14 = dataServices.baseURL + "/api/blog-details?[populate]=*";
   url15 = dataServices.baseURL + "/api/college-details?[populate]=*";
   url16 = dataServices.baseURL + "/api/colleges?[populate]=*";
+  url17 = dataServices.baseURL + "/api/menus/2?nested&populate=*";
+
 
 
 
@@ -71,21 +73,18 @@ export class dataServices {
   exam() {
     return this.http.get(this.url13)
   }
-  // blogDetails() {
-  //   return this.http.get(this.url14)
-  // }
-  // Updated method to fetch blog details based on blogId
-  blogDetailsWithId(blogId: string) {
-    const blogurl = `${this.url14}&id=${blogId}`;
-    console.log('Constructed URL:', blogurl);
-    return this.http.get(blogurl);
-
+  blogDetails() {
+    return this.http.get(this.url14)
   }
-
   collageDetails() {
     return this.http.get(this.url15)
   }
   collageByLocation() {
     return this.http.get(this.url16)
+  }
+  menuHeader()
+  {
+    return this.http.get(this.url17)
+
   }
 }

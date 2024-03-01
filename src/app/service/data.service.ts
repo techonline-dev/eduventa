@@ -123,7 +123,7 @@ export class DataService {
       menu: [
         {
           menuValue: 'Top ranked colleges',
-          route: 'list',
+          route: 'mbbs-college-list',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -143,7 +143,7 @@ export class DataService {
         },
         {
           menuValue: 'College predictor',
-          route: '/',
+          route: 'college-predictor',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -153,7 +153,7 @@ export class DataService {
         },
         {
           menuValue: 'College by location',
-          route: '/',
+          route: 'by-location',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -172,7 +172,7 @@ export class DataService {
       menu: [
         {
           menuValue: 'Top ranked colleges',
-          route: '/',
+          route: 'mba-college-list',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -192,7 +192,7 @@ export class DataService {
         },
         {
           menuValue: 'College predictor',
-          route: '/',
+          route: 'college-predictor',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -202,7 +202,7 @@ export class DataService {
         },
         {
           menuValue: 'College by location',
-          route: '/',
+          route: 'by-location',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -220,7 +220,7 @@ export class DataService {
       menu: [
         {
           menuValue: 'Top ranked colleges',
-          route: '/',
+          route: 'btech-college-list',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -240,7 +240,7 @@ export class DataService {
         },
         {
           menuValue: 'College predictor',
-          route: '/',
+          route: 'college-predictor',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -250,7 +250,7 @@ export class DataService {
         },
         {
           menuValue: 'College by location',
-          route: '/',
+          route: 'by-location',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -268,7 +268,7 @@ export class DataService {
       menu: [
         {
           menuValue: 'Top ranked colleges',
-          route: '/',
+          route: 'mtech-college-listt',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -288,7 +288,7 @@ export class DataService {
         },
         {
           menuValue: 'College predictor',
-          route: '/',
+          route: 'college-predictor',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',
@@ -298,7 +298,7 @@ export class DataService {
         },
         {
           menuValue: 'College by location',
-          route: '/',
+          route: 'by-location',
           hasSubRoute: false,
           showSubRoute: false,
           base: 'listings',

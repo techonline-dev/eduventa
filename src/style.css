@@ -2507,7 +2507,7 @@ a:focus {
 }
 .cta-section {
   padding: 100px 0;
-/*   background-image: url(./assets/img/whitebg.png); */
+  /* background-image: url(./assets/img/whitebg.png); */
   background-repeat: no-repeat;
   background-position: right center;
 }
@@ -17633,8 +17633,18 @@ section.advertisement {
     font-size: 27px;
   }
   .holiday-cabin-info .section-heading p {
-    display: none;
+    /* display: none; */
   }
+
+.owl-stage .owl-item {
+  /* height: 500px !important; */
+}
+  .owl-carousel .owl-item img {
+    display: block;
+    /* height: 500px; */
+    width: 100%;
+    background-size: contain !important;
+}
   .choose-set {
     margin-bottom: 15px;
   }
@@ -18892,7 +18902,7 @@ section.advertisement {
       z-index: -1;
   }
   .job-img{
-      display: none;
+      /* display: none; */
   }
   .cta-content.job-content {
       margin-left: 0px;
@@ -19236,9 +19246,9 @@ section.advertisement {
     flex-direction: column;
   }
   .search-btn .btn-primary {
-    padding: 8px 15px;
-    min-width: 130px;
-  }
+    padding: 14px 6px 14px 6px;
+    min-width: 120px;
+    margin-left: 15px;  }
   .cta-content .postad-btn,
   .cta-content a.browse-btn {
     padding: 8px 15px;
@@ -20501,8 +20511,11 @@ section.advertisement {
     justify-content: center;
   }
   .perfect-holiday-cabin-section {
-    display: none;
+    /* display: none; */
   }
+  .search-box .group-img input {
+    min-width: 250px !important;
+}
   .property-counter-list.text-center {
     margin-bottom: 15px;
   }

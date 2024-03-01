@@ -30,7 +30,10 @@
                           <img [src]="SITE_URL + predictor.attributes.event_logo.data.attributes.url" class="img-fluid" alt="arrow">
                         </div>
                         <div class="vacancies-content">
-                          <h4><a href="">{{ predictor.attributes.event_name }}</a></h4>
+                         
+                          <h4> <a [routerLink]="['/college-predictor-details', predictor.attributes.slug]">
+                            {{ predictor.attributes.event_name }}
+                        </a></h4>
                           <div class="vaca-location">
                             <p>{{ predictor.attributes.colleges_participating }}</p>
                             <p class="light-color">|</p>
@@ -43,7 +46,7 @@
                       </div>
                       <div class="vaca-footer">
                         <div class="footer-btn">
-                          <a href="" class="btn-view">Predict Now</a>
+                          <a  [routerLink]="['/college-predictor-details', predictor.attributes.slug]" class="btn-view">Predict Now</a>
                         </div>
                       </div>
                     </div>

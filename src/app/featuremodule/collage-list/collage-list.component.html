@@ -17,152 +17,47 @@
   </div>
 </div>
 <!-- /Breadscrumb Section -->
-
 <!-- Main Content Section -->
 <div class="list-content">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 theiaStickySidebar">
-        <div class="stickybar">
-          <div class="listings-sidebar">
+      <div class="col-lg-6" *ngFor="let college of collageList">
+        <div class="blog-listview">
+          <div class="blog-listview">
             <div class="card">
-              <h4>
-                <img src="assets/img/details-icon.svg" alt="details-icon" />
-                Filter
-              </h4>
-              <form>
-                <div class="filter-content looking-input form-group">
-                  <input type="text" class="form-control" placeholder="What are you looking for?" />
+              <div class="blog-widget">
+                <div class="blog-img">
+                  <a href="">
+                    <img src="{{SITE_URL+ college.attributes.college_logo.data.attributes.url }}" class="img-fluid"
+                      alt="blog-img" />
+                  </a>
                 </div>
-               
-                <div class="filter-content looking-input form-group input-placeholder">
-                  <div class="group-img">
-                    <input type="text" class="form-control" placeholder="Where to look?" />
-                    <i class="feather-map-pin"></i>
-                  </div>
-                </div>
-          
-                <div class="filter-content form-group amenities">
-                  <h4>Courses</h4>
-                  <ul>
-                    <li>
-                      <label class="custom_check">
-                        <input type="checkbox" name="wireless-internet" />
-                        <span class="checkmark"></span> MBA
-                      </label>
-                    </li>
-                    <li>
-                      <label class="custom_check">
-                        <input type="checkbox" name="accept-credit-card" />
-                        <span class="checkmark"></span> BCA
-                      </label>
-                    </li>
-                    <li>
-                      <label class="custom_check">
-                        <input type="checkbox" name="Coupouns" />
-                        <span class="checkmark"></span> B.tech
-                      </label>
-                    </li>
-                    <li>
-                      <label class="custom_check">
-                        <input type="checkbox" name="parking-street" />
-                        <span class="checkmark"></span> M.tech
-                      </label>
-                    </li>
-                    <li>
-                      <label class="custom_check">
-                        <input type="checkbox" name="bike-parking" />
-                        <span class="checkmark"></span> BBA
-                      </label>
-                    </li>
-                    <li>
-                      <label class="custom_check">
-                        <input type="checkbox" name="Smoking-Allowed" />
-                        <span class="checkmark"></span> PHD
-                      </label>
-                    </li>
-                  </ul>
-                </div>
+                <div class="bloglist-content">
+                  <div class="card-body">
+                    <h6>
+                      <a [routerLink]="['/collage-details', college.attributes.slug]">
+                        {{ college.attributes.college_name }}
+                      </a>
 
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-8">
-        
-       <div class="blog-listview" >
-        <div *ngFor="let college of formattedData" class="blog-listview">
-          <div class="card">
-            <div class="blog-widget">
-              <div class="blog-img">
-                <a href="">
-                  <img src="{{SITE_URL+ college.logoUrl }}" class="img-fluid" alt="blog-img" />
-                </a>
-              </div>
-              <div class="bloglist-content">
-                <div class="card-body">
-                  <h6>
-                    <a href="">{{ college.collegeName }}</a>
-                  </h6>
-                  <div class="blog-location-details">
-                    <div class="location-info">
-                      <b>Locations:&nbsp;</b> {{ college.location }}
+                      <a href="">{{ college. attributes.college_name}}</a>
+                    </h6>
+                    <div class="blog-location-details">
+                      <div class="location-info">
+                        <b>Locations:&nbsp;</b> {{ college.attributes.location }}
+                      </div>
+                      <div class="location-info">
+                        <b>Approved By:&nbsp;</b> {{ college.attributes.approved_by }}
+                      </div>
                     </div>
-                    <div class="location-info">
-                      <b>Approved By:&nbsp;</b> {{ college.approvedBy }}
-                    </div>
-                    <div class="location-info">
-                      <b>Course Fees:&nbsp;</b> {{ college.courseFee }}
-                    </div>
-                    <div class="location-info">
-                      <b>Ranking: &nbsp;</b> {{ college.Ranking }}
+                    <div class="callnow">
+                      <a class="downloadPdf" (click)="downloadOpenDialog()">Download Brochure</a>
+                      <a (click)="openDialog()">Apply Now</a>
                     </div>
                   </div>
-                  <div class="callnow">
-                    <a class="downloadPdf" (click)="downloadOpenDialog()">Download Brochure</a>
-                    <a (click)="openDialog()">Apply Now</a>
-                  </div>
-
                 </div>
               </div>
             </div>
           </div>
-          <div class="blog-pagination">
-            <nav>
-              <ul class="pagination">
-                <li class="page-item previtem">
-                  <a class="page-link" href="javascript:void(0)"><i class="fas fa-regular fa-arrow-left"></i> Prev</a>
-                </li>
-                <li class="justify-content-center pagination-center">
-                  <div class="pagelink">
-                    <ul>
-                      <li class="page-item">
-                        <a class="page-link" href="javascript:void(0)">1</a>
-                      </li>
-                      <li class="page-item active">
-                        <a class="page-link" href="javascript:void(0)">2 <span
-                            class="visually-hidden">(current)</span></a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="javascript:void(0)">3</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="javascript:void(0)">...</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="javascript:void(0)">14</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="page-item nextlink">
-                  <a class="page-link" href="javascript:void(0)">Next <i class="fas fa-regular fa-arrow-right"></i></a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
         </div>
       </div>
     </div>

@@ -28,14 +28,8 @@ export class BlogGridSidebarComponent implements OnInit {
       }
     );
   }
-
-  navigateToDetailsPage(blog: any) {
-    if (blog && blog.id) {
-      console.log('Navigating to details page with blogId:', blog.id);
-      this.router.navigate(['blog-details', blog.id], { relativeTo: this.route });
-    } else {
-      console.error('Blog object or id is undefined:', blog);
-    }
-  }
-  
+  navigateToDetailsPage(slide: any): void {
+    const blogDetailId = slide.attributes.slug;
+    this.router.navigate(['/blog-details', blogDetailId]);
+}
 }

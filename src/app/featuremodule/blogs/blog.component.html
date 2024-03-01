@@ -47,9 +47,8 @@
                                         {{slide.attributes.blog_date}}</li>
                                 </ul>
                                 <p class="blog-description">{{slide.attributes.blog_description}}</p>
-                                <!-- <div class="viewlink"><a [routerLink]="">Read More<i class="feather-arrow-right"></i></a></div> -->
                                 <div class="viewlink">
-                                    <a (click)="navigateToDetailsPage(slide)">Read More<i class="feather-arrow-right"></i></a>
+                                    <a [routerLink]="['/blog-details', slide.attributes.slug]">Read More<i class="feather-arrow-right"></i></a>
                                 </div>
 
                             </div>

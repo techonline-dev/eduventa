@@ -49,14 +49,43 @@ const routes: Routes = [
           import('./blog-details/blog-details.module').then((m) => m.BlogDetailsModule),
       },
       {
-        path: 'collage-details',
+        path: 'collage-details/:slug',
         loadChildren: () =>
           import('./collage-details/collage-details.module').then((m) => m.CollageDetailsModules),
       },
+      // {
+      //   path: 'list',
+      //   loadChildren: () =>
+      //     import('./collage-list/collage-list.module').then((m) => m.CollageListModule),
+      // },
       {
-        path: 'list',
-        loadChildren: () =>
-          import('./collage-list/collage-list.module').then((m) => m.CollageListModule),
+        path: 'listings',
+        children: [
+          {
+            path: 'mbbs-college-list',
+            loadChildren: () =>
+              import('./collage-list/collage-list.module').then((m) => m.CollageListModule),
+            data: { courseType: 'MBBS' }, 
+          },
+          {
+            path: 'mba-college-list',
+            loadChildren: () =>
+              import('./collage-list/collage-list.module').then((m) => m.CollageListModule),
+            data: { courseType: 'MBA' },
+          },
+          {
+            path: 'btech-college-list',
+            loadChildren: () =>
+              import('./collage-list/collage-list.module').then((m) => m.CollageListModule),
+            data: { courseType: 'B.TECH' },
+          },
+          {
+            path: 'mtech-college-list',
+            loadChildren: () =>
+              import('./collage-list/collage-list.module').then((m) => m.CollageListModule),
+            data: { courseType: 'M.TECH' },
+          },
+        ],
       },
       {
         path: 'college-predictor',
@@ -64,7 +93,8 @@ const routes: Routes = [
           import('./college-predictor/college-predictor.module').then((m) => m.CollegePredictorModule),
       },
       {
-        path: 'college-predictor-details',
+        // path: 'college-predictor-details',
+        path: 'college-predictor-details/:slug',
         loadChildren: () =>
           import('./college-predictor-details/college-predictor-details-routing.module').then((m) => m.CollegePredictorDetailsRouting),
       },
