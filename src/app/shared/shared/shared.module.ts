@@ -6,11 +6,10 @@ import { FooterComponent } from 'src/app/featuremodule/common/footer/footer.comp
 import { RouterModule } from '@angular/router';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
-import { NgApexchartsModule } from 'ng-apexcharts';
+// import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { GMapModule } from 'primeng/gmap';
 import { LightboxModule } from 'ngx-lightbox/lightbox.module';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -26,8 +25,6 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     CarouselModule,
     RouterModule,
     MatSliderModule,
-    GMapModule,
-    NgApexchartsModule,
     MatCardModule,
     MatSortModule,
     MatSelectModule,
@@ -49,8 +46,6 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     HeaderComponent,
     FooterComponent,
     MatCardModule,
-    NgApexchartsModule,
-    GMapModule,
     MatCardModule,
     MatSortModule,
     MatSelectModule,

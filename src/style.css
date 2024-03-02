@@ -19411,7 +19411,7 @@ section.advertisement {
   }
   .vistors-details ul {
     justify-content: flex-start;
-    -webkit-justify-content: flex-start;
+    -webkit-justify-content: start;
   }
   .banner-btm .search-group ul li {
     width: 100%;
@@ -19592,7 +19592,7 @@ section.advertisement {
   }
   .interset-btn {
     justify-content: flex-start;
-    -webkit-justify-content: flex-start;
+    -webkit-justify-content: start;
     -ms-flex-pack: start;
   }
   .listee-content h3,

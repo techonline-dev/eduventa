@@ -4,7 +4,7 @@
     'menu-opened': showMiniSidebar == true
   }"
 >
-<app-header *ngIf="firstHeader == true"></app-header>
+<app-header></app-header>
 <router-outlet>
   
   <div
@@ -27,6 +27,6 @@
     </svg>
   </div>
 </router-outlet>
-<app-footer [hidden]="hideFooter" *ngIf="firstHeader == true"></app-footer>
+<app-footer></app-footer>
 <title>Eduventa {{ tittle | titlecase }}</title>
 </div>
